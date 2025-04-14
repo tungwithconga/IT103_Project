@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Category</title>
+  <link rel="stylesheet" href="../css/managerCategory.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="./managerUser.html" class="menu-btn"><i class="fas fa-users"></i> Quản lý người dùng</a>
+      <a href="./managerCategory.html" class="menu-btn active"><i class="fas fa-tags"></i> Quản lý danh mục</a>
+      <a href="./managerPost.html" class="menu-btn"><i class="fas fa-newspaper"></i> Quản lý bài viết</a>
+      <button class="menu-btn logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+    </aside>
+
+    <div class="main-wrapper">
+      <div class="topbar">
+        <div></div>
+        <div class="topbar-icons">
+          <i class="fas fa-envelope"></i>
+          <i class="fas fa-bell"></i>
+          <img src="../image/anhtung.jpg" alt="avatar" class="top-avatar" />
+        </div>
+      </div>
+
+      <main class="main-content">
+        <div class="header">
+          <h2>Quản lý danh mục <span class="badge">0 topics</span></h2>
+          <button id="toggleFormBtn">➕ Thêm chủ đề</button>
+          <input type="text" class="search-bar" placeholder="🔍 Search topic..."/>
+        </div>
+
+        <!-- Form thêm/sửa chủ đề -->
+        <div class="form-add" id="formAddBox" style="display: none;">
+          <input type="text" id="topicName" placeholder="Nhập tên chủ đề" />
+          <input type="text" id="topicDesc" placeholder="Nhập mô tả chủ đề" />
+          <button id="addBtn">Thêm</button>
+          <button id="updateBtn" style="display:none;">Cập nhật</button>
+          <button id="cancelBtn">Hủy</button>
+        </div>
+
+        <!-- Bảng danh sách -->
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>Topic Name</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="categoryTableBody">
+            <!-- JS sẽ render nội dung tại đây -->
+          </tbody>
+        </table>
+
+        <!-- Phân trang -->
+        <div class="pagination">
+          <button class="page-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+          <div class="page-numbers">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>...</span>
+            <span>6</span>
+          </div>
+          <button class="page-btn">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../javascript/managerCategory.js"></script>
+</body>
+</html>
