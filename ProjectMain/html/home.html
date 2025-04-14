@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/home.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">TonTon BLOG</div>
+    <input type="text" placeholder="Tìm kiếm bài viết" class="search" />
+  
+    <div class="auth-buttons">
+      <!-- Nếu chưa đăng nhập -->
+      <div id="auth-buttons" style="display: block;">
+        <a href="register.html" class="btn">Đăng ký</a>
+        <a href="login.html" class="btn">Đăng nhập</a>
+      </div>
+    
+      <!-- Nếu đã đăng nhập -->
+      <div class="user-menu" id="user-info" style="display: none;">
+        <img id="userAvatar" class="user-avatar" src="" alt="avatar" />
+        <div class="dropdown" id="dropdownMenu">
+          <div class="user-meta">
+            <strong id="dropdownName">Nothing</strong><br />
+            <small id="dropdownEmail">Nothing</small>
+          </div>
+          <hr />
+          <a href="#">View profile</a>
+          <a href="#">Update profile picture</a>
+          <a href="#">Change password</a>
+          <a href="#" id="logoutBtn">Log out</a>
+        </div>
+      </div>
+    </div>
+    
+  </header>
+  
+
+  <main class="main-content">
+    <section class="section-title">
+      <h2>Bài viết mới nhất</h2>
+    </section>
+
+    <section class="grid recent-posts">
+      <!-- Đây là nơi sẽ hiển thị các bài viết mới nhất -->
+      <div class="recent-blog-posts">
+        <!-- Các bài viết mới nhất sẽ được render tại đây -->
+      </div>
+    </section>
+  </main>
+
+    <div class="add-article">
+      <h3>THÊM BÀI VIẾT MỚI ➕</h3>
+    </div>
+    <form id="articleForm" class="article-form hidden">
+        <label>Tiêu đề:</label>
+        <input type="text" name="title" />
+      
+        <label>Chủ đề bài viết:</label>
+        <select class="selectCategory" name="categories" id="categorySelect">
+          <option disabled selected>-- Chọn chủ đề --</option>
+        </select>
+
+        <label>Tâm trạng:</label>
+        <input type="text" name="mood"  value="😊 Happy" class="readonly"/>
+      
+        <label>Nội dung:</label>
+        <textarea name="content" rows="5"></textarea>
+      
+        <div class="status">
+          <label>Trạng thái</label><br />
+          <input type="radio" name="status" value="public" /> Công khai
+          <input type="radio" name="status" value="private" /> Riêng tư
+        </div>
+
+        <div class="upload-box">
+          <label for="fileUpload" class="upload-label">
+            <i class="fa-solid fa-cloud-arrow-up upload-icon"></i><br>
+            <span>Chọn ảnh <br>up lên từ máy của bạn</span>
+          </label>
+          <input type="file" id="fileUpload" name="file" hidden />
+        </div>
+        
+        <button type="submit" class="add-btn">Thêm</button>
+      </form>
+    <section class="blog-section">
+      <section class="filters">
+        <span class="filter-item active" data-category="all">Tất cả bài viết</span>
+        <!-- Các category sẽ được thêm vào ở đây -->
+      </section>      
+        <div class="blog-grid">
+          <!-- render bài viết -->
+        </div>
+      
+        <div class="pagination">
+          <span class="nav">&laquo; Previous</span>
+          <span class="page active">1</span>
+          <span class="page">2</span>
+          <span class="page">3</span>
+          <span class="dots">...</span>
+          <span class="page">9</span>
+          <span class="page">10</span>
+          <span class="nav">Next &raquo;</span>
+        </div>
+      </section>
+      
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>MY BLOG</h3>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <h4>About Rareblocks</h4>
+          <p>About us</p>
+          <p>Contact</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p>About</p>
+          <p>Features</p>
+          <p>Works</p>
+          <p>Career</p>
+        </div>
+        <div>
+          <h4>Help</h4>
+          <p>Customer Support</p>
+          <p>Delivery Details</p>
+          <p>Terms & Conditions</p>
+          <p>Privacy Pocility</p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p>Youtube</p>
+          <p>Blog</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a><i class="fa-brands fa-square-facebook"></i></a>
+          <a><i class="fa-brands fa-youtube"></i></a>
+          <a><i class="fa-brands fa-spotify"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../javascript/home.js"></script>
+</body>
+</html>

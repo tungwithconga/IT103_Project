@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(120deg, #0e1a2b, #1c2d45);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .left {
+    flex: 1;
+    color: white;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .left h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .left p {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    background: #f5f5f5;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .name-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .name-fields input {
+    flex: 1;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .login-text {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .login-text a {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  .circle.top {
+    width: 130px;
+    height: 130px;
+    top: 30px;
+    left: 300px;
+    background: radial-gradient(circle, rgba(108,0,199,1) 0%, rgba(160,64,255,1) 100%);
+  }
+  
+  .circle.bottom {
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    right: 80px;
+    background: radial-gradient(ellipse at center, #9f00ff, #5b00b8);
+  }
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+    display: block;
+  }
+  

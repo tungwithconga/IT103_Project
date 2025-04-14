@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Articles</title>
+  <link rel="stylesheet" href="../css/managerPost.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="./managerUser.html" class="menu-btn"><i class="fas fa-users"></i> Quản lý người dùng</a>
+      <a href="./managerCategory.html" class="menu-btn"><i class="fas fa-tags"></i> Quản lý danh mục</a>
+      <a href="./managerPost.html" class="menu-btn active"><i class="fas fa-newspaper"></i> Quản lý bài viết</a>
+      <button class="menu-btn logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <div class="topbar">
+        <div></div>
+        <div class="topbar-icons">
+          <i class="fas fa-envelope"></i>
+          <i class="fas fa-bell"></i>
+          <img src="../image/anhtung.jpg" alt="avatar" class="top-avatar" />
+        </div>
+      </div>
+
+      <main class="main-content">
+        <div class="header">
+          <h2>Quản lý bài viết <span class="badge">0 articles</span></h2>
+          <button id="toggleArticleFormBtn">➕ Add Article</button>
+          <input type="text" class="search-bar" placeholder="🔍 Search article..." />
+        </div>
+
+        <!-- Table -->
+        <table class="user-table">
+          <thead>
+            <thead>
+              <tr>
+                <th>Ảnh</th>
+                <th>Tiêu đề</th>
+                <th>Chủ đề</th>
+                <th>Nội dung</th>
+                <th>Trạng thái</th>
+                <th>Chỉnh sửa trạng thái</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="articleTableBody">
+              <!-- JS sẽ render bài viết tại đây -->
+            </tbody>            
+        </table>
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn"><i class="fas fa-arrow-left"></i> Previous</button>
+          <div class="page-numbers">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>...</span>
+            <span>7</span>
+          </div>
+          <button class="page-btn">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Popup Thêm/Sửa Bài Viết -->
+  <div class="popup-overlay" id="articleFormPopup" style="display: none;">
+    <div class="popup-box">
+      <h3 id="formTitle">Add Article</h3>
+
+      <label for="articleTitle">Title:</label>
+      <input type="text" id="articleTitle" placeholder="Enter article title" />
+
+      <label for="articleCategory">Article Categories:</label>
+      <select id="articleCategory">
+        <option value="">-- Chọn chủ đề --</option>
+        <!-- JS sẽ load option từ localStorage -->
+      </select>
+
+      <label for="articleMood">Mood:</label>
+      <input type="text" id="articleMood" placeholder="😊 Happy" />
+
+      <label for="articleContent">Content:</label>
+      <textarea id="articleContent" placeholder="Write your article here..."></textarea>
+
+      <label>Status</label><br />
+      <input type="radio" name="status" value="public" checked /> Public
+      <input type="radio" name="status" value="private" /> Private <br>
+
+      <label for="articleImage">Upload Image</label>
+      <input type="file" id="articleImage" />
+
+      <div class="popup-buttons">
+        <button id="addArticleBtn">Add</button>
+        <button id="updateArticleBtn" style="display: none;">Update</button>
+        <button id="cancelArticleBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script src="../javascript/managerPost.js"></script>
+</body>
+</html>
